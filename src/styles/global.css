@@ -47,6 +47,80 @@ body {
     box-shadow: 5px 0 15px rgba(0, 0, 0, 0.05);
     z-index: 10;
     border-right: 1px solid rgba(0, 0, 0, 0.05);
+    position: relative;
+}
+
+.sidebar.collapsed {
+    width: 80px;
+    padding: 30px 10px;
+}
+
+.sidebar.collapsed .logo h2 {
+    display: none;
+}
+
+.sidebar.collapsed .nav-item span {
+    display: none;
+}
+
+.sidebar.collapsed .nav-item {
+    justify-content: center;
+    padding: 12px;
+}
+
+.sidebar.collapsed .nav-item i {
+    margin-right: 0;
+}
+
+.sidebar.collapsed .badge-count {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+}
+
+.sidebar.collapsed .user-profile {
+    padding: 15px 10px;
+}
+
+.sidebar.collapsed .profile-info,
+.sidebar.collapsed .level-badge {
+    display: none;
+}
+
+.sidebar.collapsed .avatar {
+    margin: 0 auto;
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.sidebar-toggle {
+    position: relative;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 18px;
+    margin-top: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar.collapsed .sidebar-toggle {
+    padding: 12px;
+}
+
+.sidebar-toggle:hover {
+    background: rgba(255, 255, 255, 0.2);
 }
 
 .logo {

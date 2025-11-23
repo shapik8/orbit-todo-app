@@ -32,7 +32,9 @@ export const AppProvider = ({ children }) => {
     const [taskDetailModalOpen, setTaskDetailModalOpen] = useState(false);
     const [currentEditingTaskId, setCurrentEditingTaskId] = useState(null);
     const [calendarModalOpen, setCalendarModalOpen] = useState(false);
+
     const [selectedCalendarDate, setSelectedCalendarDate] = useState(null);
+    const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
 
 
 
@@ -150,6 +152,11 @@ export const AppProvider = ({ children }) => {
     const closeTaskDetailModal = () => {
         setCurrentEditingTaskId(null);
         setTaskDetailModalOpen(false);
+
+    };
+
+    const toggleSidebar = () => {
+        setIsSidebarCollapsed(!isSidebarCollapsed);
     };
 
     // Computed values
@@ -194,7 +201,10 @@ export const AppProvider = ({ children }) => {
         setCalendarModalOpen,
         setSelectedCalendarDate,
         openTaskDetailModal,
-        closeTaskDetailModal
+        openTaskDetailModal,
+        closeTaskDetailModal,
+        isSidebarCollapsed,
+        toggleSidebar
     };
 
     return (

@@ -1,7 +1,7 @@
 import { useApp } from '../../context/AppContext';
 import './UserProfile.css';
 
-const UserProfile = () => {
+const UserProfile = ({ collapsed }) => {
     const { userProfile } = useApp();
 
     return (
@@ -13,11 +13,15 @@ const UserProfile = () => {
                         alt="Profile"
                     />
                 </div>
-                <div className="profile-info">
-                    <h3 id="profile-name">{userProfile.name}</h3>
-                    <span id="profile-level">Lvl {userProfile.level} • Strategist</span>
-                </div>
-                <div className="level-badge">🛡️</div>
+                {!collapsed && (
+                    <>
+                        <div className="profile-info">
+                            <h3 id="profile-name">{userProfile.name}</h3>
+                            <span id="profile-level">Lvl {userProfile.level} • Strategist</span>
+                        </div>
+                        <div className="level-badge">🛡️</div>
+                    </>
+                )}
             </div>
         </div>
     );

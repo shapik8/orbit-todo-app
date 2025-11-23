@@ -1,7 +1,7 @@
 import { useApp } from '../../context/AppContext';
 import './Navigation.css';
 
-const Navigation = () => {
+const Navigation = ({ collapsed }) => {
     const { currentView, setCurrentView, stats } = useApp();
 
     const navItems = [
@@ -20,10 +20,11 @@ const Navigation = () => {
                         key={item.id}
                         className={`nav-item ${currentView === item.id ? 'active' : ''}`}
                         onClick={() => setCurrentView(item.id)}
+                        title={collapsed ? item.label : ''}
                     >
                         <i className={item.icon}></i>
-                        <span>{item.label}</span>
-                        {item.badge !== undefined && item.badge > 0 && (
+                        {!collapsed && <span>{item.label}</span>}
+                        {!collapsed && item.badge !== undefined && item.badge > 0 && (
                             <span className="badge-count" id="nav-task-count">{item.badge}</span>
                         )}
                     </li>
